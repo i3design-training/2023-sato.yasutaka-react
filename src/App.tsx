@@ -4,6 +4,7 @@ import "./App.css";
 import Profile from "./components/Profile";
 import { Select } from "@mui/material";
 import { useState } from "react";
+import { getImageUrl } from "./components/GetImageUrl";
 
 const person = {
   name: "Gregorio Y. Zara",
@@ -53,6 +54,28 @@ function App() {
           onClick={handleClick}
         />
       </div>
+
+      <Avatar
+        size={100}
+        person={{ 
+          name: 'Katsuko Saruhashi', 
+          imageId: 'YfeOqp2'
+        }}
+      />
+      <Avatar
+        size={80}
+        person={{
+          name: 'Aklilu Lemma', 
+          imageId: 'OKS67lh'
+        }}
+      />
+      <Avatar
+        size={50}
+        person={{ 
+          name: 'Lin Lanying',
+          imageId: '1bX5QH6'
+        }}
+      />
     </>
   );
 }
@@ -69,5 +92,31 @@ function MyButton({ count, onClick }: MyButtonProps)  {
     </button>
   );
 }
+
+
+//アバター
+
+interface Person {
+  name: string;
+  imageId: string;
+}
+
+interface AvatarProps {
+  person: Person;
+  size: number;
+}
+
+function Avatar({ person, size }: AvatarProps) {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
 
 export default App;
