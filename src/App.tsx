@@ -6,6 +6,8 @@ import Gallery from "./components/Gallery";
 import TodoList from "./components/TodoList";
 import DrinkList from "./components/Drink";
 import Drink from "./components/Drink";
+import Lists from "./components/Lists";
+import Filtering from "./components/Filtering";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -18,23 +20,10 @@ function App() {
       <Profile />
       <Profile />
       <Profile />
-
       <Gallery />
-
       <TodoList />
-
-      <div>
-        <h1>Counters that update separately</h1>
-        <MyButton
-          count={count}
-          onClick={handleClick}
-        />
-        <MyButton
-          count={count}
-          onClick={handleClick}
-        />
-      </div>
-
+      <MyButton count={count} onClick={handleClick}/>
+      <MyButton count={count} onClick={handleClick}/>
       <Avatar
         size={100}
         person={{
@@ -58,6 +47,8 @@ function App() {
       />
       <Drink name="coffee" />
       <Drink name="tea" />
+      <Lists />
+      <Filtering />
     </>
   );
 }
