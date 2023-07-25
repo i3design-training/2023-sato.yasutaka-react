@@ -8,12 +8,16 @@ import DrinkList from "./components/Drink";
 import Drink from "./components/Drink";
 import Lists from "./components/Lists";
 import Filtering from "./components/Filtering";
+import Clock from "./components/Clock";
+import { time } from "console";
+import Profile2 from "./components/Profile2";
 
 function App() {
   const [count, setCount] = useState<number>(0);
   function handleClick() {
     setCount(count + 1);
   }
+  const currentTime = new Date(); // 現在の日時を取得
 
   return (
     <>
@@ -22,8 +26,14 @@ function App() {
       <Profile />
       <Gallery />
       <TodoList />
-      <MyButton count={count} onClick={handleClick}/>
-      <MyButton count={count} onClick={handleClick}/>
+      <MyButton
+        count={count}
+        onClick={handleClick}
+      />
+      <MyButton
+        count={count}
+        onClick={handleClick}
+      />
       <Avatar
         size={100}
         person={{
@@ -49,6 +59,15 @@ function App() {
       <Drink name="tea" />
       <Lists />
       <Filtering />
+      <Clock />
+      <Profile2 person={{
+        imageId: 'lrWQx8l',
+        name: 'Subrahmanyan Chandrasekhar',
+      }} />
+      <Profile2 person={{
+        imageId: 'MK3eW3A',
+        name: 'Creola Katherine Johnson',
+      }} />
     </>
   );
 }
