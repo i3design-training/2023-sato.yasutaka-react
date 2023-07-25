@@ -7,6 +7,9 @@ interface AvatarProps {
   person: Person;
   size: number;
 }
+const circularImageStyle = {
+  borderRadius: '50%'
+};
 
 function Avatar({ person, size }: AvatarProps) {
   return (
@@ -16,6 +19,7 @@ function Avatar({ person, size }: AvatarProps) {
       alt={person.name}
       width={size}
       height={size}
+      style={circularImageStyle} 
     />
   );
 }
